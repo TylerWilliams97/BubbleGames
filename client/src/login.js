@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+// import NewUser from './newUser';
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
@@ -6,6 +7,7 @@ import Button from "react-bootstrap/Button";
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [newUser, setNewUser] = useState(false);
 
   function validateForm() {
     return email.length > 0 && password.length > 0;
@@ -35,9 +37,17 @@ export default function Login() {
             onChange={(e) => setPassword(e.target.value)}
           />
         </Form.Group>
-        <Button block size="lg" type="submit" disabled={!validateForm()}>
-          Login
-        </Button>
+        {newUser ? <Button block size="lg" type="submit" disabled={!validateForm()}>
+            Register
+          </Button> : <>
+          <Button block size="lg" type="submit" disabled={!validateForm()}>
+            Login
+            </Button>
+            <Button block size='lg' type='submit' onClick = {()=>setNewUser(true)}>
+                New User
+            </Button>
+          </>}
+        
       </Form>
     </div>
   );
