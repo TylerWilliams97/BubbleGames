@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "--Side Project--\r An organized page for drinking games",
   "main": "server.js",
+  
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
@@ -32,7 +33,8 @@
     "express": "^4.17.1",
     "if-env": "^1.0.4",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.12.3"
+    "mongoose": "^5.12.3",
+    "react-bootstrap": "^1.5.2"
   },
   "devDependencies": {
     "concurrently": "^6.0.0",

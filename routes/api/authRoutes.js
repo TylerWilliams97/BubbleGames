@@ -29,21 +29,28 @@ router.post("/signup", async (req, res)=> {
 })
 
 router.post("/login", async (req, res)=> {
+  console.log(req.body)
   try {
     const {email, password } = req.body// name email and password depends on front end
     const user = await User.findOne ({
       email: email
     }) 
+    if (!user) {
+      return res.status(401).send("unauthorized")
+    }
     const isEqual = await bcrypt.compare(password, user.password)
+
     // if isEwqual to false throw error or resjson err 
     const token = jwt.sign(
       {email: user.email, userId: user._id.toString()},
       "Secret", 
       {expiresIn:"1h"}
     )
-    res.json({token, userId:user._id.toString(), name: user.name })
+    console.log(token)
+    res.json({token, name: user.name })
     // save user with hash password . and then res json the users id from creating the user
   } catch (err) {
+    console.log(err)
     res.json(err)
   }
 })
