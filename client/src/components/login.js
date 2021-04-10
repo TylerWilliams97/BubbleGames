@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 // import NewUser from './newUser';
-import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
+import { Button, form, TextField } from "@material-ui/core";
 
 
 export default function Login() {
@@ -19,24 +18,25 @@ export default function Login() {
 
   return (
     <div className="Login">
-      <Form onSubmit={handleSubmit}>
-        <Form.Group size="lg" controlId="email">
-          <Form.Label>Email</Form.Label>
-          <Form.Control
+      <form onSubmit={handleSubmit}>
+        <form size="lg"Id="email">
+        <TextField id="standard-basic" label="Standard" />
+          <form>Email</form>
+          <form
             autoFocus
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
-        </Form.Group>
-        <Form.Group size="lg" controlId="password">
-          <Form.Label>Password</Form.Label>
-          <Form.Control
+        </form>
+        <form size="lg"Id="password">
+          <form>Password</form>
+          <form
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-        </Form.Group>
+        </form>
         {newUser ? <Button block size="lg" type="submit" disabled={!validateForm()}>
             Register
           </Button> : <>
@@ -48,7 +48,7 @@ export default function Login() {
             </Button>
           </>}
         
-      </Form>
+      </form>
     </div>
   );
 }
