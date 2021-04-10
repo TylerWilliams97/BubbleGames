@@ -1,6 +1,12 @@
 import React, { useState } from "react";
 // import NewUser from './newUser';
+<<<<<<< HEAD:client/src/components/login.js
 import { Button, form, TextField } from "@material-ui/core";
+=======
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
+import API from "../src/utils/API";
+>>>>>>> 188a9e9c6edd2507617444c51d23d0f055f8f5ac:client/src/login.js
 
 
 export default function Login() {
@@ -14,6 +20,14 @@ export default function Login() {
 
   function handleSubmit(event) {
     event.preventDefault();
+    console.log(email, password)
+    API.getAuth ({
+      email,
+      password
+    }).then((res) => {
+      console.log(res);
+    })
+  
   }
 
   return (
@@ -43,7 +57,7 @@ export default function Login() {
           <Button block size="lg" type="submit" disabled={!validateForm()}>
             Login
             </Button>
-            <Button block size='lg' type='submit' onClick = {()=>setNewUser(true)}>
+            <Button block size='lg' onClick = {()=>setNewUser(true)}>
                 New User
             </Button>
           </>}
