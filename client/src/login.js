@@ -16,7 +16,6 @@ export default function Login() {
 
   function handleSubmit(event) {
     event.preventDefault();
-    console.log(email, password)
     API.getAuth ({
       email,
       password
@@ -25,6 +24,7 @@ export default function Login() {
     })
   
   }
+
 
   return (
     <div className="Login">
