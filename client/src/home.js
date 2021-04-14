@@ -10,9 +10,11 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import LocalBarIcon from '@material-ui/icons/LocalBar';
 import HomeIcon from '@material-ui/icons/Home';
-import Home from '@material-ui/icons/Home';
+// import Home from '@material-ui/icons/Home';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import InstagramIcon from '@material-ui/icons/Instagram';
+import './App.css';
+
 
 const useStyles = makeStyles({
   list: {
@@ -71,9 +73,9 @@ export default function SwipeableTemporaryDrawer() {
 
   return (
     <div>
-      {['Bubble Games'].map((anchor) => (
+      {["Click here to get Started"].map((anchor) => (
         <React.Fragment key={anchor}>
-          <Button onClick={toggleDrawer(anchor, true)}>{anchor}</Button>
+          <Button color="primary" onClick={toggleDrawer(anchor, true)}>{anchor}</Button>
           <SwipeableDrawer
             anchor={anchor}
             open={state[anchor]}
