@@ -8,39 +8,39 @@ import Typography from '@material-ui/core/Typography';
 import { withStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles({
-  pos: {
+ pos: {
     marginBottom: 12,
   },
 });
-const TealTextTypography = withStyles({
+const WhiteTextTypography = withStyles({
   root: {
-    color: "#00897b"
+    color: "#FFFFFF"
   }
 })(Typography);
 
-export default function FlipCup() {
+export default function BeerPong() {
   const classes = useStyles();
 
   return (
     <Card className={classes.root} variant="outlined" style={{backgroundColor: "#383838"}}>
       <CardContent>
-        <TealTextTypography>
+        <WhiteTextTypography>
         <Typography variant="h5" component="h2">
-          Flip Cup
+          Beer Pong
         </Typography>
         <Typography className={classes.pos}>
-          You'll need: Plastic cups and a table/ countertop. 
-          <br></br>
-          1-2 or more players
+           
+        <br />
+        <br />
+          2 or more players
         </Typography>
         <Typography variant="body2" component="p">
-          Skillful game involving the flipping of plastic cups.
-          <br />
+        
         </Typography>
-        </TealTextTypography>
+        </WhiteTextTypography>
       </CardContent>
       <CardActions>
-        <Button size="small">Full Game Details </Button>
+        <Button size="small">More info on Beer Pong </Button>
       </CardActions>
     </Card>
   );

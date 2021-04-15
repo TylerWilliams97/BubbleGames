@@ -7,6 +7,8 @@ import GCKingsCup from './kingsCup'
 import BGHeader from './Header'
 import Quarters from './Quarters'
 import FlipCup from './FlipCup'
+import BeerPong from './BeerPong.js'
+import SignIn from './Login'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -19,30 +21,37 @@ export default function CenteredGrid() {
 
   return (
     <div className="App-header">
-    <div className={classes.root}>
+      <div className={classes.root}>
+        <SignIn />
 
-      <Grid container spacing={2}
-        direction="column"
-        // alignItems="flex center"
-        justify="center"
-        style={{ minHeight: '100vh', textAlign: "center" }}
-      >
-        <Grid item xs={12}>
-          <BGHeader></BGHeader>
+        <Grid container spacing={2}
+          // direction="column"
+          // alignItems="flex center"
+          justify="center"
+          style={{ minHeight: '100vh', textAlign: "center", maxWidth: 466 }}
+        >
+          <Grid item xs={12}>
+      
+          </Grid>
+          <Grid item xs={12}>
+            <BGHeader></BGHeader>
+            <SwipeableTemporaryDrawer></SwipeableTemporaryDrawer>
+          </Grid>
+
+          <Grid item xs={6}>
+            <GCKingsCup></GCKingsCup>
+          </Grid>
+          <Grid item xs={6}>
+            <Quarters></Quarters>
+          </Grid>
+
+          <Grid item xs={6}>
+            <FlipCup></FlipCup>
+          </Grid>
+          <Grid item xs={6}>
+            <BeerPong></BeerPong>
+          </Grid>
         </Grid>
-       
-        <Grid item xs={3}>
-          <GCKingsCup></GCKingsCup>
-        </Grid>
-        <Grid item xs={3}>
-          <Quarters></Quarters>
-        </Grid>
-        
-        <Grid item xs={3}>
-          <FlipCup></FlipCup>
-        </Grid>
-        <SwipeableTemporaryDrawer></SwipeableTemporaryDrawer>
-      </Grid>
       </div>
     </div>
   );

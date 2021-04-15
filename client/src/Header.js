@@ -6,18 +6,6 @@ import CardContent from '@material-ui/core/CardContent';
 import BGLogo from './logo'
 
 const useStyles = makeStyles({
-  root: {
-    minWidth: 275,
-    maxWidth: 193,
-  },
-  bullet: {
-    display: 'inline-block',
-    margin: '0 2px',
-    transform: 'scale(0.8)',
-  },
-  title: {
-    fontSize: 14,
-  },
   pos: {
     marginBottom: 12,
   },

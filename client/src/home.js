@@ -10,7 +10,6 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import LocalBarIcon from '@material-ui/icons/LocalBar';
 import HomeIcon from '@material-ui/icons/Home';
-// import Home from '@material-ui/icons/Home';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import './App.css';
@@ -31,7 +30,7 @@ export default function SwipeableTemporaryDrawer() {
     top: false,
     left: false,
     bottom: false,
-    right: false,
+    right: true,
   });
 
   const toggleDrawer = (anchor, open) => (event) => {
@@ -73,7 +72,7 @@ export default function SwipeableTemporaryDrawer() {
 
   return (
     <div>
-      {["Click here to get Started"].map((anchor) => (
+      {["Side Bar"].map((anchor) => (
         <React.Fragment key={anchor}>
           <Button color="primary" onClick={toggleDrawer(anchor, true)}>{anchor}</Button>
           <SwipeableDrawer

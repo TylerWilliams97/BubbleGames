@@ -8,19 +8,7 @@ import Typography from '@material-ui/core/Typography';
 import { withStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles({
-  root: {
-    minWidth: 275,
-    maxWidth: 193,
-  },
-  bullet: {
-    display: 'inline-block',
-    margin: '0 2px',
-    transform: 'scale(0.8)',
-  },
-  title: {
-    fontSize: 14,
-  },
-  pos: {
+ pos: {
     marginBottom: 12,
   },
 });
@@ -37,9 +25,6 @@ export default function Quarters() {
     <Card className={classes.root} variant="outlined" style={{backgroundColor: "#383838"}}>
       <CardContent>
         <WhiteTextTypography>
-        <Typography className={classes.title}gutterBottom>
-          BUBBLE GAMES
-        </Typography>
         <Typography variant="h5" component="h2">
           Quarters
         </Typography>
@@ -49,7 +34,7 @@ export default function Quarters() {
           1-2 or more players
         </Typography>
         <Typography variant="body2" component="p">
-          Skillful game bouncing quarters
+          Iconic game where you skillfully bounce quarters
           <br />
         </Typography>
         </WhiteTextTypography>
