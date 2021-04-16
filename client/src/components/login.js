@@ -7,8 +7,6 @@ import Checkbox from '@material-ui/core/Checkbox';
 import Link from '@material-ui/core/Link';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
-// import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
-import BGLogo from './logo'
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
@@ -59,9 +57,6 @@ export default function SignInCard() {
   return (
     <Container component="main" maxWidth="xs" justify="center" alignItems="center">
       <CssBaseline />
-      <Grid item lg={8}>
-          <BGLogo />
-      </Grid>
           <Card className={classes.root} variant="outlined" style={{backgroundColor: "#fffff"}}>
       <CardContent>
 

@@ -26,8 +26,11 @@ export default function GCKingsCup() {
 
   return (
     <Card className={classes.root} variant="outlined" style={{backgroundColor: "#383838"}}>
-      <CardContent>
           <BGLogo />
+      <CardContent>
+        <h3>King's Cup</h3>
+
+        
       </CardContent>
       <CardActions>
         <Button size="small">I want to play this game </Button>
