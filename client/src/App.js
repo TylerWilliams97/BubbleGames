@@ -1,15 +1,15 @@
 //import './css/App.css';
-import Login from './components/login.js'
-import routeButtons from "./components/buttons"
+// import Login from './components/login.js'
+import routeButtons from './components/buttons.js'
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Login></Login>
-
-        <routeButtons></routeButtons>
+      
+       
       </header>
+      <routeButtons></routeButtons>
     </div>
   );
 }
