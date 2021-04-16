@@ -7,6 +7,8 @@ export default {
   },
   saveAuth: function(authData) {
     return axios.post("/api/auth/signup", authData);
+  },
+  btnRoute: function() {
+    return axios.get("/games");
   }
-
 }

@@ -1,12 +1,8 @@
 import React, { useState } from "react";
 // import NewUser from './newUser';
-<<<<<<< HEAD:client/src/components/login.js
-import { Button, form, TextField } from "@material-ui/core";
-=======
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import API from "../src/utils/API";
->>>>>>> 188a9e9c6edd2507617444c51d23d0f055f8f5ac:client/src/login.js
+import API from "../utils/API";
 
 
 export default function Login() {
@@ -32,25 +28,25 @@ export default function Login() {
 
   return (
     <div className="Login">
-      <form onSubmit={handleSubmit}>
-        <form size="lg"Id="email">
-        <TextField id="standard-basic" label="Standard" />
-          <form>Email</form>
-          <form
+      <Form onSubmit={handleSubmit}>
+        <Form.Group size="lg"Id="email">
+        <Form id="standard-basic" label="Standard" />
+          <Form.Label>Email</Form.Label>
+          <Form.Control
             autoFocus
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
-        </form>
-        <form size="lg"Id="password">
-          <form>Password</form>
-          <form
+        </Form.Group>
+        <Form.Group size="lg"Id="password">
+          <Form.Label>Password</Form.Label>
+          <Form.Control
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-        </form>
+        </Form.Group>
         {newUser ? <Button block size="lg" type="submit" disabled={!validateForm()}>
             Register
           </Button> : <>
@@ -62,7 +58,7 @@ export default function Login() {
             </Button>
           </>}
         
-      </form>
+      </Form>
     </div>
   );
 }
