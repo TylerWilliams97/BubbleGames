@@ -7,7 +7,7 @@ import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from "@material-ui/core/styles";
 import { CardActionArea } from '@material-ui/core';
-
+//import {Route,Link} from 'react-router-dom'
 
 const UseStyles = makeStyles({
   pos: {
@@ -25,6 +25,8 @@ export default function GCKingsCup() {
   const classes = UseStyles();
 
   return (
+  
+   
     <div onClick={console.log("divclicked")}>
     <Card className={classes.root} variant="outlined" style={{backgroundColor: "#383838"}}>
       <CardActionArea>
@@ -50,5 +52,6 @@ export default function GCKingsCup() {
       </CardActionArea>
     </Card>
     </div>
+  
   );
 }

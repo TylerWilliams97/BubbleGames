@@ -19,7 +19,7 @@ export default function CenteredGrid() {
   return (
     <div className="App-header">
       <div className={classes.root}>
-        {/* <SignIn /> */}
+        { /*<SignIn/>*/ }
         <Grid container spacing={2}
           // direction="column"
           // alignItems="flex center"
