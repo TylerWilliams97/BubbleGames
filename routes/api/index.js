@@ -3,7 +3,7 @@ const authRoutes= require("./authRoutes");
 const gameRoutes = require("./gameRoutes")
 
 router.use("/auth", authRoutes)
-router.use("/game", gameRoutes)
+// router.use("/game", gameRoutes)
 
 
 

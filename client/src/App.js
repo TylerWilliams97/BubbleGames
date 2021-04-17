@@ -8,7 +8,7 @@ import BGHeader from './Header'
 import Quarters from './Quarters'
 import FlipCup from './FlipCup'
 import BeerPong from './BeerPong.js'
-// import SignIn from './Login'
+import SignIn from '../src/login'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -22,7 +22,7 @@ export default function CenteredGrid() {
   return (
     <div className="App-header">
       <div className={classes.root}>
-        {/* <SignIn /> */}
+        <SignIn />
 
         <Grid container spacing={2}
           // direction="column"
