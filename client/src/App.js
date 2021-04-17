@@ -9,7 +9,8 @@ import Quarters from './Components/Quarters'
 import FlipCup from './Components/FlipCup'
 import BeerPong from './Components/BeerPong.js'
 import KingsCupAcc from './Components/GPKingsCup'
-import SignIn from './Components/Login'
+import QuartersAcc from './Components/GPQuarters'
+import SignInCard from './Components/Login'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -23,8 +24,9 @@ export default function CenteredGrid() {
   return (
     <div className="App-header">
       <KingsCupAcc/>
+      <QuartersAcc/>
       <div className={classes.root}>
-        <SignIn />
+        <SignInCard />
 
         <Grid container spacing={2}
           // direction="column"
