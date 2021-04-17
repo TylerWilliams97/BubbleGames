@@ -46,6 +46,11 @@ router.post("/login", async (req, res)=> {
       "Secret", 
       {expiresIn:"1h"}
     )
+    res.cookie('access_token', token, {
+      maxAge: 3600,
+      httpOnly: true 
+    })
+  
     console.log(token)
     res.json({token, name: user.name })
     // save user with hash password . and then res json the users id from creating the user
