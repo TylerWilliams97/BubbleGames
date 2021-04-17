@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 // import { withStyles } from "@material-ui/core/styles";
-import BGLogo from './logo'
+import BGLogo from './Logo'
 
 const useStyles = makeStyles({
   pos: {
