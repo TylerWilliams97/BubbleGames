@@ -1,11 +1,11 @@
 import React from 'react';
-import logo from './bgLogo.jpg'
+import Logo from '../images/BGLogo.jpg'
 
-console.log(logo);
+console.log(Logo);
 
 function BGLogo() {
   // Import result is the URL image
-  return <img src={logo} alt="Bubbles Games" />;
+  return <img src={Logo} alt="Bubbles Games" />;
 }
 
 export default BGLogo;

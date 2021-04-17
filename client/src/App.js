@@ -2,13 +2,14 @@ import React from 'react';
 import './App.css';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-import SwipeableTemporaryDrawer from './home.js'
-import GCKingsCup from './kingsCup'
-import BGHeader from './Header'
-import Quarters from './Quarters'
-import FlipCup from './FlipCup'
-import BeerPong from './BeerPong.js'
-// import SignIn from './Login'
+import SwipeableTemporaryDrawer from './univeralComponents/SideBar.js'
+import GCKingsCup from './cards/KingsCup'
+import BGHeader from './univeralComponents/Header'
+import Quarters from './cards/Quarters'
+import FlipCup from './cards/FlipCup'
+import BeerPong from './cards/BeerPong.js'
+import KingsCupAcc from './pages/GPKingsCup'
+import SignIn from './pages/Login'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -21,8 +22,9 @@ export default function CenteredGrid() {
 
   return (
     <div className="App-header">
+      <KingsCupAcc/>
       <div className={classes.root}>
-        {/* <SignIn /> */}
+        <SignIn />
 
         <Grid container spacing={2}
           // direction="column"
