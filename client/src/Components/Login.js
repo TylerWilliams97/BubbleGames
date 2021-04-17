@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState} from 'react';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
@@ -12,6 +12,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
+import API from "../src/utils/API";
 
 function Copyright() {
   return (
@@ -51,10 +52,35 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
+  
 export default function SignInCard() {
   const classes = useStyles();
 
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  // const [newUser, setNewUser] = useState(false);
+
+  // function validateForm() {
+  //   return email.length > 0 && password.length > 0;
+  // }
+
+function handleSubmit(event) {
+    console.log(email, password);
+    event.preventDefault();
+    API.getAuth ({
+      // eslint-disable-next-line no-undef
+      email,
+      // eslint-disable-next-line no-undef
+      password
+    }).then((res) => {
+      console.log(res);
+      
+    })
+  
+  }
+
   return (
+
     <Container component="main" maxWidth="xs" justify="center" alignItems="center">
       <CssBaseline />
           <Card className={classes.root} variant="outlined" style={{backgroundColor: "#fffff"}}>
@@ -73,6 +99,8 @@ export default function SignInCard() {
           required
           fullWidth
           id="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
           label="Email Address"
           name="email"
           autoComplete="email"
@@ -84,6 +112,8 @@ export default function SignInCard() {
             required
             fullWidth
             name="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
             label="Password"
             type="password"
             id="password"
@@ -93,7 +123,7 @@ export default function SignInCard() {
             control={<Checkbox value="remember" color="primary" />}
             label="Remember me"
             />
-          <Button
+          <Button onClick={handleSubmit}
             type="submit"
             fullWidth
             variant="contained"
