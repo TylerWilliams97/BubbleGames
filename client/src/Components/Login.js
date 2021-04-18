@@ -13,6 +13,7 @@ import Container from '@material-ui/core/Container';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import API from "../../src/utils/API";
+// import {BrowserRouter as Router, Route } from "react-router-dom";
 
 function Copyright() {
   return (
@@ -64,7 +65,7 @@ export default function SignInCard() {
   //   return email.length > 0 && password.length > 0;
   // }
 
-function handleSubmit(event) {
+function handleSignIn(event) {
     console.log(email, password);
     event.preventDefault();
     API.getAuth ({
@@ -74,9 +75,29 @@ function handleSubmit(event) {
       password
     }).then((res) => {
       console.log(res);
+      console.log("You are now signed in!")
       
+    }).catch((err) => {
+      console.log(err, "incorrect password or username")
     })
   
+  }
+
+  function handleSignUp(event) {
+    console.log(email, password);
+    event.preventDefault();
+    API.saveAuth ({
+      // eslint-disable-next-line no-undef
+      email,
+      // eslint-disable-next-line no-undef
+      password
+    }).then((res) => {
+      console.log(res, "Thank you for signing up", email);
+      
+    }).catch ((err) => {
+      console.log(err)
+
+    })
   }
 
   return (
@@ -123,7 +144,7 @@ function handleSubmit(event) {
             control={<Checkbox value="remember" color="primary" />}
             label="Remember me"
             />
-          <Button onClick={handleSubmit}
+          <Button onClick={handleSignIn}
             type="submit"
             fullWidth
             variant="contained"
@@ -131,15 +152,10 @@ function handleSubmit(event) {
             className={classes.submit}
             >
             Sign In
-          </Button>
+          </Button  >
           <Grid container>
-            <Grid item xs>
-              <Link href="#" variant="body2">
-                Forgot password?
-              </Link>
-            </Grid>
             <Grid item>
-              <Link href="#" variant="body2">
+              <Link href="#" variant="body2" onClick={handleSignUp}>
                 {"Don't have an account? Sign Up"}
               </Link>
             </Grid>
