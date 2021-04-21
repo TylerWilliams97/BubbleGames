@@ -22,7 +22,19 @@ supplies: {
     type: String,
     trim: true,
     required: "supplies for game"
+},
+playernumber: {
+  type: Number,
+  trim: true,
+  required: "Amount of Players"
+},
+slug: {
+  type: String,
+  trim: true,
+  required: "Loading Slug"
 }
+
+
 
 
 });

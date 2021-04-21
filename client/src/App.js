@@ -9,7 +9,14 @@ import Quarters from './Components/Quarters'
 import FlipCup from './Components/FlipCup'
 import BeerPong from './Components/BeerPong.js'
 import KingsCupAcc from './Components/GPKingsCup'
-import SignIn from './Components/Login'
+import SignIn from './pages/Login'
+import GamesButtons from './Components/buttons'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -19,10 +26,10 @@ const useStyles = makeStyles((theme) => ({
 export default function CenteredGrid() {
   const classes = useStyles();
   return (
+    <Router>
     <div className="App-header">
-      <KingsCupAcc/>
       <div className={classes.root}>
-        <SignIn />
+     
 
         <Grid container spacing={2}
           // direction="column"
@@ -37,19 +44,43 @@ export default function CenteredGrid() {
             <SideBar />
           </Grid>
           <Grid item s={6}>
-            <GCKingsCup></GCKingsCup>
+          
+            
+            <Switch>
+              <Route path="/">
+                <GamesButtons/>
+              </Route>
+              <Route path="/KingsCupAcc">
+                  <KingsCupAcc />
+              </Route>
+              <Route path="/FlipCup">
+                  <FlipCup />
+              </Route>
+              <Route path="/Quarters">
+                  <Quarters />
+              </Route>
+              <Route path="/BeerPong">
+                  <BeerPong />
+              </Route>
+            </Switch>
+            
+          
+            
+
+            {/* Add router for games and default it to GamesButtons */}
           </Grid>
           <Grid item s={6}>
-            <Quarters></Quarters>
+            
           </Grid>
           <Grid item s={6}>
-            <FlipCup></FlipCup>
+            
           </Grid>
           <Grid item s={6}>
-            <BeerPong></BeerPong>
+            
           </Grid>
         </Grid>
       </div>
     </div>
+    </Router>
   );
 }
