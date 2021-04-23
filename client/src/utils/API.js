@@ -8,10 +8,16 @@ export default {
   saveAuth: function(authData) {
     return axios.post("/api/auth/signup", authData);
   },
+<<<<<<< HEAD
   // getGame: function(gameData) {
   //   return axios.post(api/game/)
   // }
   
 
 
+=======
+  btnRoute: function() {
+    return axios.get("/games");
+  }
+>>>>>>> tyler
 }

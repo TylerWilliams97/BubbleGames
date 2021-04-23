@@ -13,6 +13,7 @@ import HomeIcon from '@material-ui/icons/Home';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import '../App.css';
+import {Link} from 'react-router-dom';
 
 
 const useStyles = makeStyles({
@@ -52,10 +53,12 @@ export default function SideBar() {
     >
       <List>
         {['Home', 'Games', 'Hall of Bubbles'].map((text, index) => (
+          <Link to='/'>
           <ListItem button key={text}>
             <ListItemIcon>{index % 2 === 0 ? <HomeIcon /> : <LocalBarIcon />}</ListItemIcon>
             <ListItemText primary={text} />
           </ListItem>
+          </Link>
         ))}
       </List>
       <Divider />
