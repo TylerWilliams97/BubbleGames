@@ -16,6 +16,7 @@ import API from "../utils/API";
 import axios from 'axios';
 import { useHistory } from "react-router-dom"
 import BGLogo from "../Components/Logo";
+import { Divider } from '@material-ui/core';
 
 
 
@@ -111,6 +112,7 @@ function handleSignIn(event) {
     }).then((res) => {
       console.log(res, "Thank you for signing up", email);
       
+      
     }).catch ((err) => {
       console.log(err)
 
@@ -125,7 +127,7 @@ function handleSignIn(event) {
 console.log(res)
     })
      
-  }
+   }
 
 
   return (
@@ -197,7 +199,6 @@ console.log(res)
         </form>
       </div>
       
-         {login && <button onClick={userAuth}>hello</button>}
       
               </CardContent>
           </Card>

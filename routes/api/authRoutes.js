@@ -28,7 +28,8 @@ router.post("/signup", async (req, res)=> {
 })
 
 const verifyJwt = (req,res,next) => {
-  const token = req.cookies.access_token
+  const token = req.body.token
+  console.log(token)
   // const decoded = jwt.verify(token, "Secret")
   if (!token) {
     res.send("You need a token.")
@@ -44,7 +45,7 @@ const verifyJwt = (req,res,next) => {
   }
 }
 
-router.get("/isAuth", verifyJwt, (req, res) => {
+router.post("/isAuth", verifyJwt, (req, res) => {
   res.send("you are authenticated !")
 })
 

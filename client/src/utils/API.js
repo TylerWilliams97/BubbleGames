@@ -9,8 +9,10 @@ export default {
     return axios.post("/api/auth/signup", authData);
   },
   checkAuth: function (authData) {
-    return axios.get("/api/auth/isAuth", authData)
+    const token = localStorage.getItem("token")
+    return axios.post("/api/auth/isAuth", {token})
   }
+
   // getGame: function(gameData) {
   //   return axios.post(api/game/)
   // }
