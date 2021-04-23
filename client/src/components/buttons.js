@@ -8,13 +8,8 @@ import Typography from '@material-ui/core/Typography';
 import { withStyles } from "@material-ui/core/styles";
 import { CardActionArea } from '@material-ui/core';
 import {
-  BrowserRouter as Router,
   Link
 } from "react-router-dom";
-import KingsCupAcc from './GPKingsCup';
-import FlipCup from './FlipCup';
-import BeerPong from './BeerPong';
-import Quarters from './Quarters';
 
 const UseStyles = makeStyles({
   pos: {
@@ -43,7 +38,7 @@ export default function GamesButtons() {
    
   
     <Card className={classes.root} variant="outlined" style={{backgroundColor: "#383838"}}>
-      <Link to="/KingsCupAcc">
+      <Link to="/KingsCup">
       <CardActionArea>
       <CardContent>
           <WhiteTextTypography>

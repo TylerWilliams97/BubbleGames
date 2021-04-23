@@ -3,13 +3,13 @@ import './App.css';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import SideBar from './Components/SideBar.js'
-import GCKingsCup from './Components/KingsCup'
+//import GCKingsCup from './Components/KingsCup'
 import BGHeader from './Components/Header'
-import Quarters from './Components/Quarters'
-import FlipCup from './Components/FlipCup'
-import BeerPong from './Components/BeerPong.js'
+import QuartersAcc from './Components/GPQuarters'
+import FlipcupAcc from './Components/GPFlipcup'
+import BeerPongAcc from './Components/GPBeerpong'
 import KingsCupAcc from './Components/GPKingsCup'
-import SignIn from './pages/Login'
+//import SignIn from './pages/Login'
 import GamesButtons from './Components/buttons'
 import {
   BrowserRouter as Router,
@@ -47,20 +47,20 @@ export default function CenteredGrid() {
           
             
             <Switch>
-              <Route path="/">
+              <Route exact path="/">
                 <GamesButtons/>
               </Route>
-              <Route path="/KingsCupAcc">
+              <Route exact path="/KingsCup">
                   <KingsCupAcc />
               </Route>
-              <Route path="/FlipCup">
-                  <FlipCup />
+              <Route exact path="/FlipCup">
+                  <FlipcupAcc />
               </Route>
-              <Route path="/Quarters">
-                  <Quarters />
+              <Route exact path="/Quarters">
+                  <QuartersAcc />
               </Route>
               <Route path="/BeerPong">
-                  <BeerPong />
+                  <BeerPongAcc />
               </Route>
             </Switch>
             
