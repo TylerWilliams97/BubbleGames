@@ -27,8 +27,28 @@ router.post("/signup", async (req, res)=> {
   }
 })
 
+const verifyJwt = (req,res,next) => {
+  const token = req.cookies.access_token
+  // const decoded = jwt.verify(token, "Secret")
+  if (!token) {
+    res.send("You need a token.")
+  } else {
+    jwt.verify(token, "Secret", (err, decoded) => {
+      if (err) {
+        res.json({auth: false, message: "failed to authenticate"});
+      } else {
+        req.userId = decoded.id;
+        next();
+      }
+    })
+  }
+}
+
+router.get("/isAuth", verifyJwt, (req, res) => {
+  res.send("you are authenticated !")
+})
+
 router.post("/login", async (req, res)=> {
-  console.log(req.body)
   try {
     const {email, password } = req.body// name email and password depends on front end
     const user = await User.findOne ({
@@ -38,8 +58,13 @@ router.post("/login", async (req, res)=> {
       return res.status(401).send("unauthorized")
     }
     const isEqual = await bcrypt.compare(password, user.password)
-
-    // if isEwqual to false throw error or resjson err 
+    if (!isEqual) {
+       res.status(401).send({auth: false})
+       console.log(res)
+    } else {
+      
+    }
+//  is this passing a heard ? 
     const token = jwt.sign(
       {email: user.email, userId: user._id.toString()},
       "Secret", 
@@ -51,8 +76,9 @@ router.post("/login", async (req, res)=> {
     })
   
     console.log(token)
-    res.json({token, name: user.name })
+    res.json({token, email: email, auth: true,  })
     // save user with hash password . and then res json the users id from creating the user
+  
   } catch (err) {
     console.log(err)
     res.json(err)

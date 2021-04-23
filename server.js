@@ -30,12 +30,12 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 })
 
-// app.use('/api/auth/login', (req, res)=>{
-//   const token = req.cookies.access_token
-//   const decoded = jwt.verify(token, "Secret")
+app.use('/api/auth/login', (req, res)=>{
+  const token = req.cookies.access_token
+  const decoded = jwt.verify(token, "Secret")
 
-//   res.status
-// })
+  res.status()
+})
 
 
 // Syncing our database and logging a message to the user upon success

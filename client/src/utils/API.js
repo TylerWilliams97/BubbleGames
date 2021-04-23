@@ -8,6 +8,9 @@ export default {
   saveAuth: function(authData) {
     return axios.post("/api/auth/signup", authData);
   },
+  checkAuth: function (authData) {
+    return axios.get("/api/auth/isAuth", authData)
+  }
   // getGame: function(gameData) {
   //   return axios.post(api/game/)
   // }

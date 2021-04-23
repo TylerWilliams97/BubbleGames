@@ -1,4 +1,4 @@
-import React, { useState} from 'react';
+import React, { useState, useContext} from 'react';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
@@ -12,7 +12,9 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
-import API from "../../src/utils/API";
+import API from "../utils/API";
+import axios from 'axios';
+
 // import {BrowserRouter as Router, Route } from "react-router-dom";
 
 function Copyright() {
@@ -59,6 +61,8 @@ export default function SignInCard() {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [login, setLogin] = useContext(false);
+  
   // const [newUser, setNewUser] = useState(false);
 
   // function validateForm() {
@@ -66,7 +70,7 @@ export default function SignInCard() {
   // }
 
 function handleSignIn(event) {
-    console.log(email, password);
+    
     event.preventDefault();
     API.getAuth ({
       // eslint-disable-next-line no-undef
@@ -76,6 +80,12 @@ function handleSignIn(event) {
     }).then((res) => {
       console.log(res);
       console.log("You are now signed in!")
+     if(!res.data.token) {ç
+       setLogin(false);
+     } else {
+       localStorage.setItem("token",res.data.token)
+       setLogin(true);
+     }
       
     }).catch((err) => {
       console.log(err, "incorrect password or username")
@@ -84,7 +94,6 @@ function handleSignIn(event) {
   }
 
   function handleSignUp(event) {
-    console.log(email, password);
     event.preventDefault();
     API.saveAuth ({
       // eslint-disable-next-line no-undef
@@ -99,6 +108,17 @@ function handleSignIn(event) {
 
     })
   }
+  function userAuth (event) {
+    event.preventDefault();
+    API.checkAuth( 
+  localStorage.getItem("token")
+
+  ).then ((res) => {
+console.log(res)
+    })
+     
+  }
+
 
   return (
 
@@ -140,10 +160,7 @@ function handleSignIn(event) {
             id="password"
             autoComplete="current-password"
             />
-          <FormControlLabel
-            control={<Checkbox value="remember" color="primary" />}
-            label="Remember me"
-            />
+          
           <Button onClick={handleSignIn}
             type="submit"
             fullWidth
@@ -162,7 +179,9 @@ function handleSignIn(event) {
           </Grid>
         </form>
       </div>
-       
+      
+         {login && <button onClick={userAuth}>hello</button>}
+      
               </CardContent>
           </Card>
       <Box mt={8}>
