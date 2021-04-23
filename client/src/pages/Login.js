@@ -14,6 +14,11 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import API from "../utils/API";
 import axios from 'axios';
+import { useHistory } from "react-router-dom"
+import BGLogo from "../Components/Logo";
+
+
+
 
 // import {BrowserRouter as Router, Route } from "react-router-dom";
 
@@ -61,13 +66,15 @@ export default function SignInCard() {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [login, setLogin] = useContext(false);
+  const [login, setLogin] = useState(false);
   
   // const [newUser, setNewUser] = useState(false);
 
   // function validateForm() {
   //   return email.length > 0 && password.length > 0;
   // }
+
+  let history = useHistory();
 
 function handleSignIn(event) {
     
@@ -80,11 +87,12 @@ function handleSignIn(event) {
     }).then((res) => {
       console.log(res);
       console.log("You are now signed in!")
-     if(!res.data.token) {ç
+     if(!res.data.token) {
        setLogin(false);
      } else {
        localStorage.setItem("token",res.data.token)
        setLogin(true);
+      history.push("/Kingscup")
      }
       
     }).catch((err) => {
@@ -121,6 +129,15 @@ console.log(res)
 
 
   return (
+      
+   <div className="App-header"> 
+   <BGLogo />
+    
+    <div className={classes.root}> 
+
+  
+
+  
 
     <Container component="main" maxWidth="xs" justify="center" alignItems="center">
       <CssBaseline />
@@ -188,5 +205,8 @@ console.log(res)
         <Copyright />
       </Box>
     </Container>
-  );
+ </div>
+ </div>  
+
+   );
 }
