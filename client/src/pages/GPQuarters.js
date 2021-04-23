@@ -92,7 +92,7 @@ export default function QuartersAcc() {
       </Accordion>
       <Accordion square expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
         <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
-          <Typography>King's Cup Card Assignments</Typography>
+          <Typography></Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>

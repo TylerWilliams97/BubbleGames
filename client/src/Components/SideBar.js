@@ -60,14 +60,14 @@ export default function SideBar() {
       </List>
       <Divider />
       <List>
-        {['Facebook', 'Instagram'].map((text, index) => (
+        {['Facebook'].map((text, index) => (
           <ListItem button key={text}>
-            <ListItemIcon>{index % 2 === 0 ? <FacebookIcon /> : <InstagramIcon />}</ListItemIcon>
+            <ListItemIcon>{index % 2 === 0 ? <FacebookIcon /> }</ListItemIcon>
             <ListItemText primary={text} />
           </ListItem>
         ))}
       </List>
-    </div>
+    </div>                                                          
   );
 
   return (
@@ -88,3 +88,5 @@ export default function SideBar() {
     </div>
   );
 }
+
+// facebook page url https://www.facebook.com/Bubble-Games-109718827921302

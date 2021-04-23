@@ -1,8 +1,8 @@
-.App {
+.App- {
   text-align: center;
 }
 .App-header {
-  background-color: #121212;
+  background: linear-gradient(0deg, #383838 30%,  #121212 50%);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
