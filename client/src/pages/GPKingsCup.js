@@ -59,13 +59,13 @@ export default function KingsCupAcc(props) {
     function userAuth(event) {
       API.checkAuth().then((res) => {
         console.log(res);
-        if (!res.data.auth) {
+        if (!res.data) {
           return props.history.push("/");
         }
       });
     }
     userAuth();
-  }, []);
+  }, );
 
   const handleChange = (panel) => (event, newExpanded) => {
     setExpanded(newExpanded ? panel : false);

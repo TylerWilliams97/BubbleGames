@@ -69,11 +69,6 @@ export default function SignInCard() {
   const [password, setPassword] = useState("");
   const [login, setLogin] = useState(false);
   
-  // const [newUser, setNewUser] = useState(false);
-
-  // function validateForm() {
-  //   return email.length > 0 && password.length > 0;
-  // }
 
   let history = useHistory();
 
@@ -94,6 +89,7 @@ function handleSignIn(event) {
        localStorage.setItem("token",res.data.token)
        setLogin(true);
       history.push("/Kingscup")
+
      }
       
     }).catch((err) => {
