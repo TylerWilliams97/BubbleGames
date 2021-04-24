@@ -49,7 +49,7 @@ export default function SideBar() {
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
-    >
+    >npm st
       <List>
         {['Home', 'Games', 'Hall of Bubbles'].map((text, index) => (
           <ListItem button key={text}>
@@ -62,9 +62,9 @@ export default function SideBar() {
       <List>
         {['Facebook'].map((text, index) => (
           <ListItem button key={text}>
-            <ListItemIcon>{index % 2 === 0 ? <FacebookIcon /> }</ListItemIcon>
+            <ListItemIcon>{ <FacebookIcon /> }</ListItemIcon>
             <ListItemText primary={text} />
-          </ListItem>
+          </ListItem>                                 
         ))}
       </List>
     </div>                                                          

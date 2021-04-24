@@ -20,7 +20,7 @@ export default function CenteredGrid() {
   return (
   <Router >  
 
-   <div className="App-header"> 
+   <div className="App"> 
    
        <div className={classes.root}> 
   
